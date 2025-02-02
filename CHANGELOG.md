@@ -1,5 +1,14 @@
 # Nova Video Player changelog
 
+<a id="v6.3.28"></a>
+## [v6.3.28 release](https://github.com/nova-video-player/aos-AVP/releases/tag/v6.3.28) - 2025-02-02
+
+- fix external long subtitles being skipped
+
+
+[Changes][v6.3.28]
+
+
 <a id="v6.3.27"></a>
 ## [v6.3.27 release](https://github.com/nova-video-player/aos-AVP/releases/tag/v6.3.27) - 2025-02-02
 
@@ -2460,6 +2469,7 @@ Stable branch: this release is based on minSDK 17, targetSDK 27, NDK-r16b, ffmpe
 [Changes][v1.0]
 
 
+[v6.3.28]: https://github.com/nova-video-player/aos-AVP/compare/v6.3.27...v6.3.28
 [v6.3.27]: https://github.com/nova-video-player/aos-AVP/compare/v6.3.26...v6.3.27
 [v6.3.26]: https://github.com/nova-video-player/aos-AVP/compare/v6.3.25...v6.3.26
 [v6.3.25]: https://github.com/nova-video-player/aos-AVP/compare/v6.3.24...v6.3.25
