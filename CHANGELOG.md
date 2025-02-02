@@ -1,9 +1,55 @@
 # Nova Video Player changelog
 
+<a id="v6.3.27"></a>
+## [v6.3.27 release](https://github.com/nova-video-player/aos-AVP/releases/tag/v6.3.27) - 2025-02-02
+
+- fix crash on external ssa subtitles
+
+[Changes][v6.3.27]
+
+
+<a id="v6.3.26"></a>
+## [v6.3.26 release](https://github.com/nova-video-player/aos-AVP/releases/tag/v6.3.26) - 2025-02-01
+
+- fix text subtitles not displayed sometimes
+- synced with new crowdin translations
+
+[Changes][v6.3.26]
+
+
+<a id="v6.3.25"></a>
+## [v6.3.25 release](https://github.com/nova-video-player/aos-AVP/releases/tag/v6.3.25) - 2025-01-31
+
+- align with next google play release
+
+
+[Changes][v6.3.25]
+
+
+<a id="v6.3.24"></a>
+## [v6.3.24 release](https://github.com/nova-video-player/aos-AVP/releases/tag/v6.3.24) - 2025-01-29
+
+- fix UPnP video library disappearing sometimes
+
+
+[Changes][v6.3.24]
+
+
+<a id="v6.3.23"></a>
+## [v6.3.23 release](https://github.com/nova-video-player/aos-AVP/releases/tag/v6.3.23) - 2025-01-28
+
+- enable passthrough for all since detection mechanism does not work for SPDIF (only works with HDMI)
+
+
+[Changes][v6.3.23]
+
+
 <a id="v6.3.22"></a>
 ## [v6.3.22 release](https://github.com/nova-video-player/aos-AVP/releases/tag/v6.3.22) - 2025-01-22
 
 - switch back to mediacodec for audio decoding with ffmpeg fallback when not in passthrough
+
+Feedback expected from users using an Android TV TV set using stereo speakers (no AV receiver) and reporting great sound experience on AC3 or DTS and stereo downmix when using previous releases.
 
 
 [Changes][v6.3.22]
@@ -2414,6 +2460,11 @@ Stable branch: this release is based on minSDK 17, targetSDK 27, NDK-r16b, ffmpe
 [Changes][v1.0]
 
 
+[v6.3.27]: https://github.com/nova-video-player/aos-AVP/compare/v6.3.26...v6.3.27
+[v6.3.26]: https://github.com/nova-video-player/aos-AVP/compare/v6.3.25...v6.3.26
+[v6.3.25]: https://github.com/nova-video-player/aos-AVP/compare/v6.3.24...v6.3.25
+[v6.3.24]: https://github.com/nova-video-player/aos-AVP/compare/v6.3.23...v6.3.24
+[v6.3.23]: https://github.com/nova-video-player/aos-AVP/compare/v6.3.22...v6.3.23
 [v6.3.22]: https://github.com/nova-video-player/aos-AVP/compare/v6.3.21...v6.3.22
 [v6.3.21]: https://github.com/nova-video-player/aos-AVP/compare/v6.3.20...v6.3.21
 [v6.3.20]: https://github.com/nova-video-player/aos-AVP/compare/v6.3.19...v6.3.20
