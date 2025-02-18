@@ -83,6 +83,7 @@ Note that on Sony Android TVs, a rescan of USB disk is triggered at each power u
 ## Nova Video Player can’t find information on some of my videos, I’d like to add them manually.
 
 Nova Video Player supports NFO file description format that follows the [Kodi specification](http://kodi.wiki/view/NFO_files/Movies).Advanced users can manually create them or use a dedicated tool for this task. More details are available [here](https://github.com/nova-video-player/aos-AVP/wiki/NFO-files).
+Note that Nova only supports The Movie Database identifiers (tmdbid).
 
 ## What type of subtitles are supported?
 
