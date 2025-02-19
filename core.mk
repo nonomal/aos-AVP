@@ -16,16 +16,21 @@ ifeq ($(os), darwin)
 	readlink_prefix := g
 	JAVA8 := $(shell /usr/libexec/java_home -v 1.8)
 	JAVA11 := $(shell /usr/libexec/java_home -v 11)
+	JAVA17 := $(shell /usr/libexec/java_home -v 17)
 endif
 
 ifeq ($(os), linux)
 	JAVA8 := $(shell update-alternatives --list java | sed -nE -e 's/(.*java-8[^/]*).*/\1/p')
 	JAVA11 := $(shell update-alternatives --list java | sed -nE -e 's/(.*java-11[^/]*).*/\1/p')
+	JAVA17 := $(shell update-alternatives --list java | sed -nE -e 's/(.*java-17[^/]*).*/\1/p')
 	ifeq (,$(JAVA8))
             JAVA8 := $(shell update-alternatives --list java | sed -nE -e 's/(.*jdk-8[^/]*).*/\1/p')
         endif
 	ifeq (,$(JAVA11))
             JAVA11 := $(shell update-alternatives --list java | sed -nE -e 's/(.*jdk-11[^/]*).*/\1/p')
+        endif
+	ifeq (,$(JAVA17))
+            JAVA17 := $(shell update-alternatives --list java | sed -nE -e 's/(.*jdk-17[^/]*).*/\1/p')
         endif
 endif
 
@@ -245,21 +250,6 @@ define cp_ffmpeg_libs
 	fi
 endef
 
-define make_hacks
-	@if [ "$(ASAN)" != 1 && "$(NDK_CPU_X86)" = "1" ];then \
-		echo -----------------------------------------; \
-		echo -----------------------------------------; \
-		echo create fake _no_neon libs in $(1)/libs/x86 because Intel wants to see the exact same number of ARM and x86 libs otherwise it will Houdini us; \
-		echo -----------------------------------------; \
-		echo -----------------------------------------; \
-		rm -f $(1)/libs/x86/*no_neon*;\
-		for i in $(1)/libs/armeabi-v7a/*;do \
-			touch $(1)/libs/x86/$$(basename $$i) ;\
-		done ;\
-		if [ "$$(ls $(1)/libs/x86 |wc -l)" != "$$(ls $(1)/libs/armeabi-v7a |wc -l)" ];then echo "Mismatching x86/armeabi-v7a libs"; 1;fi ;\
-	fi
-endef
-
 define make_avos
 	MAKE_JOBS=$(MAKE_JOBS) BUILD=$(BUILD) $(ndk_debug) NDK_APP_ABI="$(NDK_APP_ABI)" LIBAV_CONFIG=$(2) make native_build_native/avos
 
@@ -284,7 +274,6 @@ define make_avos
 		mkdir -p $(1)/libs/x86_64; \
 		cp -r $(AVOS_DIR)/libs/x86_64/*so $(1)/libs/x86_64; \
 	fi
-	$(call make_hacks,$(1),$(2))
 endef
 
 native_avos: native_build_native/avos

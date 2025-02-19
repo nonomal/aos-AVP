@@ -10,7 +10,7 @@
 
   <project path="Video" name="aos-Video" revision="v6NewLook" />
   <project path="MediaLib" name="aos-MediaLib" revision="v6NewLook" />
-  <project path="FileCoreLibrary" name="aos-FileCoreLibrary" revision="v6" />
+  <project path="FileCoreLibrary" name="aos-FileCoreLibrary" revision="v6NewLook" />
 
   <project path="native/avos" name="aos-avos" revision="nova" />
   <project path="native/audiocompress" name="aos-audiocompress" />
